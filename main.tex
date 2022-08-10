@@ -385,8 +385,15 @@ resulting in \eqref{eq:shift1}. Similarly, it can be shown that
 \label{eq:z_trans_shift}
 	{\mathcal {Z}}\{x(n-k)\} = z^{-k}X(z)
 \end{equation}
-\item Obtain $X(z)$ for $x(n)$ defined in problem 
-	\ref{def:xn}.
+
+\item Obtain $X(z)$ for $x(n)$ defined in problem  $\eqref{X(n)}$.
+\solution
+\begin{align}
+Z(x(n))&=\sum_{n=-\infty}^{\infty}x(n)z^{-n}\\
+&=x(0)z^{0}+x(1)z^{-1}+x(2)z^{-2}+x(3)z^{-3}+\\
+&\nonumber x(4)z^{-4}+x(5)z^{-5}\\
+&=1+2z^{-1}+3z^{-2}+4z^{-3}+2z^{-4}+z^{-5}
+\end{align}
 
 \item Find
 %
@@ -452,10 +459,11 @@ a^nu(n) \ztrans \frac{1}{1-az^{-1}} \quad \abs{z} > \abs{a}
 \\
 &=\sum _{n=-\infty }^{\infty }u(n) (az^{-1})^{n}
 \\
-&=\sum _{n=-\infty }^{\infty }(az^{-1})^{n}
+&=\sum _{n=-\infty }^{\infty }(az^{-1})^{n} , \quad \abs{az^{-1}} < 1\\
 \\
-&= \frac{1}{1-az^{-1}}
+&= \frac{1}{1-az^{-1}} , \quad \abs{a} < \abs{z}
 \end{align}
+using the fomula for the sum of an infinite geometric progression.
 %
 \item 
 Let
@@ -465,8 +473,18 @@ H\brak{e^{\j \omega}} = H\brak{z = e^{\j \omega}}.
 Plot $\abs{H\brak{e^{\j \omega}}}$.  Comment.  $H(e^{\j \omega})$ is
 known as the {\em Discret Time Fourier Transform} (DTFT) of $x(n)$.
 \\
-\solution  The graph is symmetric and periodic it is attending high of value 4 and minimum between (0 - 0.5). From uniformly spaced samples it produces a function of frequency that is a periodic summation of the continuous Fourier transform of the original continuous function 
+\solution  The graph is symmetric and periodic it is attending high of value 4 and minimum between (0 - 0.5). 
+It is bounded between (0, 4) and periodic with period (6.75)
 \\
+\begin{align}
+	H\brak{e^{j \omega}} &= \frac{1+e^{-2j\omega}}{1 + \frac{e^{-j\omega}}{2}}\\
+	  \implies \abs{H\brak{e^{j \omega}}} &= \frac{\abs{1+e^{-2j\omega}}}{\abs{1 + \frac{e^{-j\omega}}{2}}}\\
+						  &= \frac{\abs{1+e^{2j\omega}}}{\abs{e^{2j\omega} + \frac{e^{j\omega}}{2}}}\\
+						  &= \frac{\abs{1+\cos2\omega + j\sin2\omega}}{\abs{e^{j\omega}+ \frac{1}{2}}}\\
+						  &= \frac{\abs{4\cos^2\brak{\omega} + 4j\sin\brak{\omega}\cos\brak{\omega}}}{\abs{2e^{j\omega} + 1}}\\
+						  &= \frac{\abs{4\cos\brak{\omega}}\abs{\cos\brak{\omega} + j\sin\brak{\omega}}}{\abs{2\cos\brak{\omega} + 1 + 2j\sin\brak{\omega}}}\\
+	  \therefore \abs{H\brak{e^{j \omega}}} &= \frac{\abs{4\cos\brak{\omega}}}{\sqrt{5 +4\cos\brak{\omega}}}
+  \end{align}
 The following code plots Fig. \ref{fig:dtft}.
 \begin{lstlisting}
 wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/dtft.py
@@ -509,7 +527,7 @@ H(z) &= \frac{1}{1 + \frac{1}{2}z^{-1}} + \frac{ z^{-2}}{1 + \frac{1}{2}z^{-1}}
 using \eqref{eq:anun} and \eqref{eq:z_trans_shift}.
 \item Sketch $h(n)$. Is it bounded? Convergent? 
 \\
-\solution Yes, it is bounded and convergent. We can clearly see in the plot it is not tending to infinite and remain finite.
+\solution Yes, it is bounded between and convergent. We can clearly see in the plot it is not tending to infinite and remain finite.
 \\
 The following code plots Fig. \ref{fig:hn}.
 \begin{lstlisting}
