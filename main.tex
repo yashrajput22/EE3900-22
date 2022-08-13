@@ -253,8 +253,7 @@ sudo pip install cffi pysoundfile
 \label{prob:input}
 Download the sound file from  
 \begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/ 
-EE1310/master/filter/codes/Sound_Noise.wav
+wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-2/Sound_Noise.wav
 \end{lstlisting}
 %\href{http://tlc.iith.ac.in/img/sound/Sound_Noise.wav}{\url{http://tlc.iith.ac.in/img/sound/Sound_Noise.wav}}  
 %in the link given below.
@@ -273,6 +272,13 @@ Upload the sound file that you downloaded in Problem \ref{prob:input} in the spe
 %
 \solution There are a lot of yellow lines between 440 Hz to 5.1 KHz.  These represent the synthesizer key tones. Also, the key strokes
 are audible along with background noise.
+\begin{figure}[!ht]
+	\begin{center}
+	\includegraphics[width=\columnwidth]{./figs/2_2}
+	\end{center}
+	\captionof{figure}{}
+	\label{fig:xnyn}	
+	\end{figure}
 % By observing spectrogram, it clearly shows that tonal frequency is under 4kHz. And above 4kHz only noise is present.
 \item
 \label{prob:output}
@@ -312,7 +318,13 @@ sf.write('Sound With ReducedNoise.wav',output_signal, fs)
 The output of the python script in Problem \ref{prob:output} is the audio file Sound\_With\_ReducedNoise.wav. Play the file in the spectrogram in Problem \ref{prob:spectrogram}. What do you observe?
 \\
 \solution The key strokes as well as background noise is subdued in the audio.  Also,  the signal is blank for frequencies above 5.1 kHz.
-
+\begin{figure}[!ht]
+	\begin{center}
+	\includegraphics[width=\columnwidth]{./figs/2_4}
+	\end{center}
+	\captionof{figure}{}
+	\label{fig:xnyn}	
+	\end{figure}
 \end{enumerate}
 \section{Difference Equation}
 \begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
@@ -474,7 +486,7 @@ Plot $\abs{H\brak{e^{\j \omega}}}$.  Comment.  $H(e^{\j \omega})$ is
 known as the {\em Discret Time Fourier Transform} (DTFT) of $x(n)$.
 \\
 \solution  The graph is symmetric and periodic it is attending high of value 4 and minimum between (0 - 0.5). 
-It is bounded between (0, 4) and periodic with period (6.75)
+It is bounded between (0, 4) and periodic with period $(2\pi)$
 \\
 \begin{align}
 	H\brak{e^{j \omega}} &= \frac{1+e^{-2j\omega}}{1 + \frac{e^{-j\omega}}{2}}\\
@@ -496,7 +508,26 @@ wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/dtft.
 \label{fig:dtft}
 \end{figure}
 
-\item Express $x(n)$ in terms of $H\brak{e^{\j \omega}}$.
+\item Express $x(n)$ in terms of $H\brak{e^{\j \omega}}$.\\
+\solution 
+\begin{align}
+	\int_{-\pi}^{\pi}e^{\j\omega(n - k)}d\omega =
+	\begin{cases}
+		2\pi & n = k \\
+		0 & \textrm{otherwise}
+	\end{cases}
+\end{align}
+\begin{align}
+	H\brak{e^{j\omega}} &= \sum_{n=-\infty}^{\infty} h\brak{n} e^{-j\omega n}
+	\\
+	\int_{-\pi}^{\pi}H\brak{e^{j\omega}}e^{j\omega k}d\omega &= \sum_{n=-\infty}^{\infty} h\brak{n} \int_{-\pi}^{\pi} e^{-j\omega n}e^{j\omega k}d\omega
+    \\
+	\int_{-\pi}^{\pi}H\brak{e^{j\omega}}e^{j\omega k}d\omega &= \sum_{n=-\infty}^{\infty} h\brak{n} 2\pi
+    \\
+    \int_{-\pi}^{\pi}H\brak{e^{j\omega}}e^{j\omega k}d\omega &= 2\pi h\brak{n} 
+	\\
+	\frac{1}{2\pi} \int_{-\pi}^{\pi}H\brak{e^{j\omega}}e^{j\omega k}d\omega &= h\brak{n} 
+\end{align} 
 \end{enumerate}
 
 \section{Impulse Response}
@@ -609,6 +640,23 @@ $y(n)$ in  Fig.
 \begin{lstlisting}
 wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/ynconv.py
 \end{lstlisting}
+We use Toeplitz matrices for convolution
+\begin{align}
+	\mtx{y} &= \mtx{x} \circledast \mtx{h}\\
+	\mtx{y} &= 
+	\begin{pmatrix}
+		h_1 & 0 & . & . & . & 0 \\
+		h_2 & h_1 & . & . & . & 0 \\
+		h_3 & h_2 & h_1 & . & . & 0 \\
+		. & . & . & . & . & . \\
+		0 & . & . & h_3 & h_2 & h_1 \\
+		0 & . & . & . & h_2 & h_1 \\
+		0 & . & . & . & 0 & h_1
+	\end{pmatrix}
+	\begin{pmatrix}
+		x_1 \\ x_2 \\ \vdots \\ x_n
+	\end{pmatrix}
+\end{align}
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{./figs/ynconv}
@@ -620,6 +668,13 @@ wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/yncon
 \begin{equation}
 y(n) =  \sum_{n=-\infty}^{\infty}x(n-k)h(k)
 \end{equation}
+\solution
+From \eqref{eq:convolution}, we substitute $k := n - k$ to get
+\begin{align}
+y\brak{n} &= \sum_{k=-\infty}^{\infty}x\brak{k}h\brak{n - k} \\
+		  &= \sum_{n - k=-\infty}^{\infty}x\brak{n - k}h\brak{k} \\
+		  &= \sum_{k=-\infty}^{\infty}x\brak{n - k}h\brak{k}
+\end{align}
 \end{enumerate}
 
 %
