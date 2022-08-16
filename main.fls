@@ -921,13 +921,13 @@ INPUT ./figs/4_5.png
 INPUT ./figs/4_5.png
 INPUT ./figs/4_5.png
 INPUT ./figs/4_5.png
-INPUT ./figs/5_2.png
-INPUT ./figs/5_2.png
-INPUT ./figs/5_2.png
-INPUT ./figs/5_2.png
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/txfonts/txmi.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxmi.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxptmri.tfm
+INPUT ./figs/5_2.png
+INPUT ./figs/5_2.png
+INPUT ./figs/5_2.png
+INPUT ./figs/5_2.png
 INPUT ./figs/5_4.png
 INPUT ./figs/5_4.png
 INPUT ./figs/5_4.png

@@ -344,7 +344,7 @@ Sketch $y(n)$.
 \\
 \solution The following code yields Fig. \ref{fig:xnyn}.
 \begin{lstlisting}
-wget https://github.com/gadepall/EE1310/raw/master/filter/codes/xnyn.py
+wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-3/3_2.py
 \end{lstlisting}
 \begin{figure}[!ht]
 \begin{center}
@@ -357,7 +357,10 @@ wget https://github.com/gadepall/EE1310/raw/master/filter/codes/xnyn.py
 \\
 \solution The following code yields Fig. \ref{fig:xnyn}.
 \begin{lstlisting}
-wget https://github.com/gadepall/EE1310/raw/master/filter/codes/xnyn.py
+wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-3/3_2.c
+\end{lstlisting}
+\begin{lstlisting}
+wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-3/3_2_Mycode.py
 \end{lstlisting}
 \begin{figure}[!ht]
 \begin{center}
@@ -499,7 +502,7 @@ It is bounded between (0, 4) and periodic with period $(2\pi)$
   \end{align}
 The following code plots Fig. \ref{fig:dtft}.
 \begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/dtft.py
+wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-4/4_5.py
 \end{lstlisting}
 \begin{figure}[!ht]
 \centering
@@ -560,9 +563,17 @@ using \eqref{eq:anun} and \eqref{eq:z_trans_shift}.
 \\
 \solution Yes, it is bounded between and convergent. We can clearly see in the plot it is not tending to infinite and remain finite.
 \\
+We see that $h(n)$ is bounded. For large $n$, we see that 
+\begin{align}
+	h(n) &= \brak{-\frac{1}{2}}^n + \brak{-\frac{1}{2}}^{n - 2} \\
+		 &= \brak{-\frac{1}{2}}^{n}\brak{4 + 1} = 5\brak{-\frac{1}{2}}^n \\
+		 &\implies \left|\frac{h(n + 1)}{h(n)}\right| = \frac{1}{2}
+\end{align}
+and therefore, $\lim_{n \to \infty}\left|\frac{h(n + 1)}{h(n)}\right| = \frac{1}{2} < 1$. Hence, we see that $h(n)$ converges.
+\\
 The following code plots Fig. \ref{fig:hn}.
 \begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/hn.py
+wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-5/5_2.py
 \end{lstlisting}
 \begin{figure}[!ht]
 \centering
@@ -613,7 +624,7 @@ h(n) &= \brak{-\frac{1}{2}}^{n}u(n) + \brak{-\frac{1}{2}}^{n-2}u(n-2)
 \end{align}
 %
 \begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/hndef.py
+wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-5/5_4.py
 \end{lstlisting}
 \begin{figure}[!ht]
 \centering
@@ -638,7 +649,7 @@ $y(n)$ in  Fig.
 \ref{fig:xnyn}. 
 %
 \begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/ynconv.py
+wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-5/5_5.py
 \end{lstlisting}
 We use Toeplitz matrices for convolution
 \begin{align}
