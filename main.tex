@@ -750,8 +750,59 @@ wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-6/6_3.p
 
 \item Repeat the previous exercise by computing $X(k), H(k)$ and $y(n)$ through FFT and 
 IFFT.
+\solution Download the code from
+\begin{lstlisting}
+wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-6/6_4.py
+\end{lstlisting}
 \item Wherever possible, express all the above equations as matrix equations.
+\\
+\solution
+We use the DFT Matrix, where $\omega = e^{-\frac{j2k\pi}{N}}$, which is given by
+\begin{align}
+	\mtx{W} = 
+	\begin{pmatrix}
+		\omega^0 & \omega^0 & \ldots & \omega^0 \\
+		\omega^0 & \omega^1 & \ldots & \omega^{N - 1} \\
+		\vdots & \vdots & \ddots & \vdots \\
+		\omega^0 & \omega^{N - 1} & \ldots & \omega^{(N -1)(N - 1)}
+	\end{pmatrix}
+\end{align}
+i.e. $W_{jk} = \omega^{jk}$, $0 \leq j, k < N$. Hence, we can write any DFT equation as
+\begin{align}
+	\mtx{X} = \mtx{W}\mtx{x} = \mtx{x}\mtx{W}
+\end{align}
+\noindent where
+\begin{align}
+	\mtx{x} = 
+	\begin{pmatrix}
+		x(0) \\ x(1) \\ \vdots \\ x(n - 1)
+	\end{pmatrix}
+\end{align}
+\noindent Using \eqref{eq:inv-ft}, the inverse Fourier Transform is given by
+\begin{align}
+	\mtx{x} = \mathcal{F}^{-1}\brak{\mtx{X}} = \mtx{W}^{-1}\mtx{X} &= 
+	\frac{1}{N}\mtx{W^{H}}\mtx{X} = \frac{1}{N}\mtx{X}\mtx{W^{H}} \\ 
+	\implies \mtx{W}^{-1} &= \frac{1}{N}\mtx{W^{H}}
+\end{align}
+\noindent where $H$ denotes hermitian operator. We can rewrite \eqref{eq:fp} using the
+element-wise multiplication operator as
+\begin{align}
+	\mtx{Y} = \mtx{H}\cdot\mtx{X} = \brak{\mtx{W}\mtx{h}}\cdot\brak{\mtx{W}\mtx{x}}
+\end{align}
+The plot of $y(n)$ using the DFT matrix in Fig. \eqref{fig:yn-mtx} is the same as $y(n)$ in 
+Fig. \eqref{fig:xnyn}. Download the code using
+\begin{lstlisting}
+$ wget https://raw.githubusercontent.com/goats-9/ee3900-assignments/main/Assignment_01/codes/6_5.py
+\end{lstlisting}
+and run it using
 \end{enumerate}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\columnwidth]{./figs/6_5.png}
+	\caption{$y(n)$ using the DFT matrix}
+	\label{fig:yn-mtx}
+\end{figure}
 %
 \section{Exercises}
 

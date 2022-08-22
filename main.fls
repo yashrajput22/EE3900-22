@@ -952,6 +952,17 @@ INPUT ./figs/6_3.png
 INPUT ./figs/6_3.png
 INPUT ./figs/6_3.png
 INPUT ./figs/6_3.png
+INPUT ./figs/6_5.png
+INPUT ./figs/6_5.png
+INPUT ./figs/6_5.png
+INPUT ./figs/6_5.png
+INPUT ./figs/6_5.png
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/txfonts/txr.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxptmr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/txfonts/txb.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxptmb.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxb.tfm
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
