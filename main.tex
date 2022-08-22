@@ -38,6 +38,7 @@
 %\usepackage{iithtlc}
 %\usepackage[framemethod=tikz]{mdframed}
 \usepackage{listings}
+\usepackage{polynom}
 
 
 %\usepackage{stmaryrd}
@@ -542,6 +543,24 @@ find
 		\end{align}
 		for H(z) in 
 		\eqref{eq:freq_resp}.
+		\solution We substitute $x := z^{-1}$, and write
+
+\polylongdiv{1 + x^2}{1 + \frac{1}{2}x}
+
+So,
+\begin{align}
+	H(z) &= -4 + 2z^{-1} + \frac{5}{1 + \frac{1}{2}z^{-1}} \\
+		 &= -4 + 2z^{-1} + 5\sum_{n = 0}^{\infty}\brak{-\frac{1}{2}}^nz^{-n} \\
+		 &= 1 - \frac{1}{2}z^{-1} + 5\sum_{n = 2}^{\infty}\brak{-\frac{1}{2}}^nz^{-n} \\
+		 &= \sum_{n = 0}^{\infty}\brak{-\frac{1}{2}}^nz^{-n} + 4\sum_{n = 2}^{\infty}\brak{-\frac{1}{2}}^nz^{-n} \\
+		 &= \sum_{n = -\infty}^{\infty}u(n)\brak{-\frac{1}{2}}^nz^{-n} + \nonumber \\
+		 &\sum_{n = -\infty}^{\infty}u(n - 2)\brak{-\frac{1}{2}}^{n - 2}z^{-n}
+\end{align}
+
+Therefore, from \eqref{eq:z_trans}, 
+\begin{align}
+	h(n) = \brak{-\frac{1}{2}}^{n}u(n) + \brak{-\frac{1}{2}}^{n-2}u(n-2)
+\end{align}
 \item \label{prob:impulse_resp}
 
 Find an expression for $h(n)$ using $H(z)$, given that 
@@ -583,6 +602,7 @@ wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-5/5_2.p
 \label{fig:hn}
 \end{figure}
 %
+\item Convergent? Justify using the ratio test.
 \item The system with $h(n)$ is defined to be stable if
 \begin{equation}
 \sum_{n=-\infty}^{\infty}h(n) < \infty
@@ -603,6 +623,7 @@ h(n) &= \brak{-\frac{1}{2}}^{n}u(n) + \brak{-\frac{1}{2}}^{n-2}u(n-2)
 &= \frac{2}{3} + \frac{2}{3} < \infty 
 \end{align}
 %
+\item Verify the above result using a python code.
 \item 
 Compute and sketch $h(n)$ using 
 \begin{equation}
@@ -675,7 +696,7 @@ We use Toeplitz matrices for convolution
 \caption{$y(n)$ from the definition of convolution}
 \label{fig:ynconv}
 \end{figure}
-
+\item Express the above convolution using a Teoplitz matrix.
 \item Show that
 \begin{equation}
 y(n) =  \sum_{n=-\infty}^{\infty}x(n-k)h(k)
