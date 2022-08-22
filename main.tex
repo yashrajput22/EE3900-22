@@ -624,6 +624,10 @@ h(n) &= \brak{-\frac{1}{2}}^{n}u(n) + \brak{-\frac{1}{2}}^{n-2}u(n-2)
 \end{align}
 %
 \item Verify the above result using a python code.
+\solution
+\begin{lstlisting}
+wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-5/5_6.py
+\end{lstlisting}
 \item 
 Compute and sketch $h(n)$ using 
 \begin{equation}
@@ -679,7 +683,7 @@ wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-5/5_8.p
 \caption{$y(n)$ from the definition of convolution}
 \label{fig:ynconv}
 \end{figure}
-\item Express the above convolution using a Teoplitz matrix.
+\item Express the above convolution using a Teoplitz matrix.\\
 \solution\\
 We use Toeplitz matrices for convolution
 \begin{align}
@@ -729,12 +733,13 @@ Y(k) = X(k)H(k)
  y\brak{n}={\frac {1}{N}}\sum _{k=0}^{N-1}Y\brak{k}\cdot e^{\j 2\pi kn/N},\quad n = 0,1,\dots, N-1
 \end{equation}
 \\
-\solution The following code plots Fig. \ref{fig:ynconv}. Note that this is the same as 
+\solution The following code plots Fig. \ref{fig:ynconv} and computes $X(k)$
+and $Y(k)$. Note that this is the same as 
 $y(n)$ in  Fig. 
 \ref{fig:xnyn}. 
 %
 \begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/yndft.py
+wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-6/6_3.py
 \end{lstlisting}
 \begin{figure}[!ht]
 \centering
