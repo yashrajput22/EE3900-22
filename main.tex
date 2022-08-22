@@ -542,7 +542,7 @@ find
 			h(n), \quad n < 5
 		\end{align}
 		for H(z) in 
-		\eqref{eq:freq_resp}.
+		\eqref{eq:freq_resp}.\\
 		\solution We substitute $x := z^{-1}$, and write
 
 \polylongdiv{1 + x^2}{1 + \frac{1}{2}x}
@@ -582,18 +582,9 @@ using \eqref{eq:anun} and \eqref{eq:z_trans_shift}.
 \item Sketch $h(n)$. Is it bounded? Convergent? 
 \\
 \solution Yes, it is bounded between and convergent. We can clearly see in the plot it is not tending to infinite and remain finite.
-\\
-We see that $h(n)$ is bounded. For large $n$, we see that 
-\begin{align}
-	h(n) &= \brak{-\frac{1}{2}}^n + \brak{-\frac{1}{2}}^{n - 2} \\
-		 &= \brak{-\frac{1}{2}}^{n}\brak{4 + 1} = 5\brak{-\frac{1}{2}}^n \\
-		 &\implies \left|\frac{h(n + 1)}{h(n)}\right| = \frac{1}{2}
-\end{align}
-and therefore, $\lim_{n \to \infty}\left|\frac{h(n + 1)}{h(n)}\right| = \frac{1}{2} < 1$. Hence, we see that $h(n)$ converges.
-\\
 The following code plots Fig. \ref{fig:hn}.
 \begin{lstlisting}
-wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-5/5_2.py
+wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-5/5_3.py
 \end{lstlisting}
 \begin{figure}[!ht]
 \centering
@@ -603,6 +594,15 @@ wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-5/5_2.p
 \end{figure}
 %
 \item Convergent? Justify using the ratio test.
+\\
+\solution
+We see that $h(n)$ is bounded. For large $n$, we see that 
+\begin{align}
+	h(n) &= \brak{-\frac{1}{2}}^n + \brak{-\frac{1}{2}}^{n - 2} \\
+		 &= \brak{-\frac{1}{2}}^{n}\brak{4 + 1} = 5\brak{-\frac{1}{2}}^n \\
+		 &\implies \left|\frac{h(n + 1)}{h(n)}\right| = \frac{1}{2}
+\end{align}
+and therefore, $\lim_{n \to \infty}\left|\frac{h(n + 1)}{h(n)}\right| = \frac{1}{2} < 1$. Hence, we see that $h(n)$ converges.
 \item The system with $h(n)$ is defined to be stable if
 \begin{equation}
 \sum_{n=-\infty}^{\infty}h(n) < \infty
@@ -646,7 +646,7 @@ h(n) &= \brak{-\frac{1}{2}}^{n}u(n) + \brak{-\frac{1}{2}}^{n-2}u(n-2)
 \end{align}
 %
 \begin{lstlisting}
-wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-5/5_4.py
+wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-5/5_7.py
 \end{lstlisting}
 \begin{figure}[!ht]
 \centering
@@ -671,8 +671,16 @@ $y(n)$ in  Fig.
 \ref{fig:xnyn}. 
 %
 \begin{lstlisting}
-wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-5/5_5.py
+wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-5/5_8.py
 \end{lstlisting}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/ynconv}
+\caption{$y(n)$ from the definition of convolution}
+\label{fig:ynconv}
+\end{figure}
+\item Express the above convolution using a Teoplitz matrix.
+\solution\\
 We use Toeplitz matrices for convolution
 \begin{align}
 	\mtx{y} &= \mtx{x} \circledast \mtx{h}\\
@@ -690,13 +698,6 @@ We use Toeplitz matrices for convolution
 		x_1 \\ x_2 \\ \vdots \\ x_n
 	\end{pmatrix}
 \end{align}
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=\columnwidth]{./figs/ynconv}
-\caption{$y(n)$ from the definition of convolution}
-\label{fig:ynconv}
-\end{figure}
-\item Express the above convolution using a Teoplitz matrix.
 \item Show that
 \begin{equation}
 y(n) =  \sum_{n=-\infty}^{\infty}x(n-k)h(k)
