@@ -937,7 +937,10 @@ in Problem \ref{prob:output} is executed through the following difference equati
 %
 where the input signal is $x(n)$ and the output signal is $y(n)$ with initial values all 0. Replace
 \textbf{signal.filtfilt} with your own routine and verify.\\
-%
+\begin{lstlisting}
+wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-7/7_1.py
+\end{lstlisting}
+%wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-7/7_1.py
 \item Repeat all the exercises in the previous sections for the above $a$ and $b$.
 \\
 \solution
@@ -989,11 +992,11 @@ Substituting the values,
 \end{align}
 The values $r(i)$, $p(i)$, $k(i)$ and thus the impulse response function are computed and plotted at
 \begin{lstlisting}
-$ wget https://raw.githubusercontent.com/goats-9/ee3900-assignments/main/Assignment_01/codes/7_2_1.py
+wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-7/7_2_1.py
 \end{lstlisting}
 The filter frequency response is plotted at
 \begin{lstlisting}
-$ wget https://raw.githubusercontent.com/goats-9/ee3900-assignments/main/Assignment_01/codes/7_2_2.py
+wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-7/7_2_2.py
 \end{lstlisting}
 Observe that for a series $t_n = r^n$, $\frac{t_{n + 1}}{t_n} = r$.
 By the ratio test, $t_n$ converges if $|r| < 1$. We note that
@@ -1008,8 +1011,25 @@ $h(n)$ is negligible after $n \geq 64$, and we
 can apply a 64-bit FFT to get y(n). The following code uses the DFT matrix
 to generate $y(n)$.
 \begin{lstlisting}
-$ wget https://raw.githubusercontent.com/goats-9/ee3900-assignments/main/Assignment_01/codes/7_2_3.py
+wget https://github.com/yashrajput22/EE3900-22/blob/master/codes/Section-7/7_2_3.py
 \end{lstlisting}
+\begin{figure}[!htb]
+	\includegraphics[width=\columnwidth]{./figs/7_2_1.png}
+	\caption{Plot of $h(n)$}
+	\label{fig:butter-imp}
+\end{figure}
+
+\begin{figure}[!htb]
+	\includegraphics[width=\columnwidth]{./figs/7_2_2.png}
+	\caption{Filter frequency response}
+	\label{fig:butter-resp}
+\end{figure}
+
+\begin{figure}[!htb]
+	\includegraphics[width=\columnwidth]{./figs/7_2_3.png}
+	\caption{Plot of $y(n)$}
+	\label{fig:butter-out}
+\end{figure}
 \item What is the sampling frequency of the input signal?
 \\
 \solution
@@ -1018,7 +1038,7 @@ Sampling frequency(fs)=44.1kHZ.
 What is type, order and  cutoff-frequency of the above butterworth filter
 \\
 \solution
-The given butterworth filter is low pass with order=2 and cutoff-frequency=4kHz.
+The given butterworth filter is low pass with order=4 and cutoff-frequency=4kHz.
 %
 \item
 Modifying the code with different input parameters and to get the best possible output.
