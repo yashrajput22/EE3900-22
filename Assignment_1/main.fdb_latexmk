@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1661251256 "/home/yashrajput/EE3900/filters/Assignment_1/main.tex" "main.pdf" "main" 1661251257
+["pdflatex"] 1661252810 "/home/yashrajput/EE3900/filters/Assignment_1/main.tex" "main.pdf" "main" 1661252811
   "/etc/texmf/web2c/texmf.cnf" 1659783471 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/yashrajput/EE3900/filters/Assignment_1/main.tex" 1661251256 8228 af29de2be8dae4f852411942019a4bfe ""
+  "/home/yashrajput/EE3900/filters/Assignment_1/main.tex" 1661252810 8245 edb65774a57f316b7b35c901d5d30526 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -126,9 +126,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1659978492 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1659978520 2799753 5f03753655fbcc51488d190f27891ec8 ""
-  "main.aux" 1661251257 1053 a5bce481b075436cc6dc5988bb4d1a47 "pdflatex"
-  "main.out" 1661251257 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1661251256 8228 af29de2be8dae4f852411942019a4bfe ""
+  "main.aux" 1661252810 1053 a5bce481b075436cc6dc5988bb4d1a47 "pdflatex"
+  "main.out" 1661252810 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1661252810 8245 edb65774a57f316b7b35c901d5d30526 ""
   (generated)
   "main.aux"
   "main.log"

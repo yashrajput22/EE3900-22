@@ -42,7 +42,7 @@ plt.ylabel('$|H(e^{\jmath\omega})| $')
 plt.grid()# minor
 
 #if using termux
-plt.savefig('../figs/7_2_2.png')
+#plt.savefig('../figs/7_2_2.png')
 #subprocess.run(shlex.split("termux-open ../figs/dtft.pdf"))
 #else
-#plt.show()
+plt.show()
