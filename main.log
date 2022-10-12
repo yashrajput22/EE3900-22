@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.8.8)  29 SEP 2022 03:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.8.8)  29 SEP 2022 03:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -962,16 +962,16 @@ File: ./figs/6_5.png Graphic file (type png)
 <use ./figs/6_5.png>
 Package pdftex.def Info: ./figs/6_5.png  used on input line 951.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
-<./figs/6_7_1.png, id=391, 460.72125pt x 343.2825pt>
+<./figs/6_7_1.png, id=391, 462.528pt x 346.896pt>
 File: ./figs/6_7_1.png Graphic file (type png)
 <use ./figs/6_7_1.png>
 Package pdftex.def Info: ./figs/6_7_1.png  used on input line 976.
-(pdftex.def)             Requested size: 252.0pt x 187.76357pt.
-<./figs/6_7_2.png, id=392, 460.72125pt x 343.2825pt>
+(pdftex.def)             Requested size: 252.0pt x 189.00427pt.
+<./figs/6_7_2.png, id=392, 462.528pt x 346.896pt>
 File: ./figs/6_7_2.png Graphic file (type png)
 <use ./figs/6_7_2.png>
 Package pdftex.def Info: ./figs/6_7_2.png  used on input line 982.
-(pdftex.def)             Requested size: 252.0pt x 187.76357pt.
+(pdftex.def)             Requested size: 252.0pt x 189.00427pt.
  [9 <./figs/6_5.png> <./figs/6_7_1.png> <./figs/6_7_2.png>]
 
 LaTeX Warning: Command \j invalid in math mode on input line 1024.
@@ -1247,7 +1247,7 @@ Here is how much of TeX's memory you used:
  1144 hyphenation exceptions out of 8191
  60i,17n,63p,348b,1944s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxsc.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (14 pages, 457803 bytes).
+Output written on main.pdf (14 pages, 451494 bytes).
 PDF statistics:
  682 PDF objects out of 1000 (max. 8388607)
  574 compressed objects within 6 object streams
