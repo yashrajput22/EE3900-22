@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1666715913 "/home/yashrajput/EE3900/filters/charger/main.tex" "main.pdf" "main" 1666715915
+["pdflatex"] 1666716161 "/home/yashrajput/EE3900/filters/charger/main.tex" "main.pdf" "main" 1666716162
   "/etc/texmf/web2c/texmf.cnf" 1659783471 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/yashrajput/EE3900/filters/charger/main.tex" 1666715909 18395 297382e634c0f124b337291fef485c5d ""
+  "/home/yashrajput/EE3900/filters/charger/main.tex" 1666716161 18410 ad8fae7b847e49b4f4853f2731239ff6 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -255,10 +255,10 @@
   "figs/5_1.png" 1666626183 51713 5ace76d45a5a4d50c0d774dbd5ab32ba ""
   "figs/5_2.png" 1666626183 45354 49f4243b7720baeba2b94cb5d06a3082 ""
   "figs/5_3.png" 1666626183 57761 321577c5bf7faa1f7019a731c22f56ac ""
-  "main.aux" 1666715915 6064 04f4ba2698a50b2fc4def68198ed31c8 "pdflatex"
-  "main.out" 1666715915 562 43eed739d6f151668068f9fe9749ab82 "pdflatex"
-  "main.tex" 1666715909 18395 297382e634c0f124b337291fef485c5d ""
-  "main.toc" 1666715915 347 ab0275893e96685a8da4bb325c49e584 "pdflatex"
+  "main.aux" 1666716162 6064 04f4ba2698a50b2fc4def68198ed31c8 "pdflatex"
+  "main.out" 1666716162 562 43eed739d6f151668068f9fe9749ab82 "pdflatex"
+  "main.tex" 1666716161 18410 ad8fae7b847e49b4f4853f2731239ff6 ""
+  "main.toc" 1666716162 347 ab0275893e96685a8da4bb325c49e584 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
