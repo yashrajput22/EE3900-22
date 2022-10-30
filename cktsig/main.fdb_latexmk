@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1665568945 "/home/yashrajput/EE3900/filters/cktsig/main.tex" "main.pdf" "main" 1665568946
+["pdflatex"] 1667157415 "/home/yashrajput/EE3900/filters/cktsig/main.tex" "main.pdf" "main" 1667157417
   "/etc/texmf/web2c/texmf.cnf" 1659783471 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/yashrajput/EE3900/filters/cktsig/main.tex" 1665568944 15047 6f01f0afe50ecdb781c99f700845caa7 ""
+  "/home/yashrajput/EE3900/filters/cktsig/main.tex" 1667157411 20667 0c060e7bb892e05c731601f729091a4e ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -249,13 +249,15 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1659978492 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1659978520 2799753 5f03753655fbcc51488d190f27891ec8 ""
-  "figs/2_6.png" 1665553768 21945 888573e6b1b3a80023c25da9f541e7c0 ""
-  "figs/3_4.png" 1665553768 21920 ea118ebe1d7998961876f612b4efb011 ""
-  "figs/ckt.jpg" 1665553768 69298 63890edd9fcac75851d5561bfccbbec3 ""
-  "main.aux" 1665568946 3234 b529b64ddb4775a5f4556816c2119f60 "pdflatex"
-  "main.out" 1665568946 365 b3e3ccc68c338a65e874c98dfabadf2b "pdflatex"
-  "main.tex" 1665568944 15047 6f01f0afe50ecdb781c99f700845caa7 ""
-  "main.toc" 1665568946 214 94e957bf6337c160d7a811f8dec9934f "pdflatex"
+  "figs/2_6.png" 1666931433 21945 888573e6b1b3a80023c25da9f541e7c0 ""
+  "figs/3_4.png" 1666931433 21920 ea118ebe1d7998961876f612b4efb011 ""
+  "figs/4_3.png" 1666931433 20540 d900f4dc0d35041a6afc6ae3bb68de45 ""
+  "figs/4_7.png" 1666931433 24159 bccce7192edb26a56dc6027afa28a4ee ""
+  "figs/ckt.jpg" 1666931433 69298 63890edd9fcac75851d5561bfccbbec3 ""
+  "main.aux" 1667157417 4766 beaa93ec35ece69e2408c1ac46672fa0 "pdflatex"
+  "main.out" 1667157417 501 d3bf9c80be444e36f35564b54c366050 "pdflatex"
+  "main.tex" 1667157411 20667 0c060e7bb892e05c731601f729091a4e ""
+  "main.toc" 1667157417 288 e884501929903fe3a5bd8fb7ff8488cb "pdflatex"
   (generated)
   "main.aux"
   "main.log"

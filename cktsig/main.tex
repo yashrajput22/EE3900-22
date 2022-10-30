@@ -1,5 +1,4 @@
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
-%
 \usepackage{setspace}
 \usepackage{gensymb}
 \usepackage{xcolor}
@@ -120,7 +119,7 @@ columns=fullflexible
 \providecommand{\mean}[1]{E\left[ #1 \right]}
 \providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
 \providecommand{\ztrans}{\overset{\mathcal{Z}}{ \rightleftharpoons}}
-
+\providecommand{\diff}[2]{\ensuremath{\frac{d{#1}}{d{#2}}}}
 %\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
 \providecommand{\system}[1]{\overset{\mathcal{#1}}{\longleftrightarrow}}
 	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
@@ -330,7 +329,7 @@ The python code \texttt{codes/2\_6.py} plots the graph below.
 \solution The ngspice script \texttt{codes/2\_7.cir} simulates the given circuit and the generated output is depicted in Fig. \eqref{fig:v1-t}
 \end{enumerate}
 
- \section{Initial Conditions}
+\section{Initial Conditions}
 \begin{enumerate}[label=\arabic*.,ref=\thesection.\theenumi]
 \numberwithin{equation}{section}
 \item Find $q_2$ in Fig. \ref{fig:ckt}.
@@ -362,8 +361,10 @@ Since capacitor behaves as an open circuit, we use KCL at X.
 \end{align}                                         
 and hence, $q_2 = \SI[parse-numbers=false]{\frac{2}{3}}{\micro\coulomb}$.
 
-\item Draw the equivalent $s$-domain resistive circuit w	hen S is switched to position Q.  Use variables $R_1, R_2, C_0$ for the passive elements.
-	
+\item Draw the equivalent $s$-domain resistive circuit when S 
+is switched to position Q.  Use variables $R_1, R_2, C_0$ for 
+the passive elements.	
+
 \begin{figure}[!htb]
     \begin{center}
     \begin{circuitikz} 
@@ -421,7 +422,7 @@ The Python code \texttt{codes/3\_4.py} plots the graph below.
 
 \solution From the initial conditions,
 \begin{align}
-    v_{C_0}(0-) = \frac{q_1}{C} = \SI[parse-numbers=false]{\frac{4}{3}}{\V}
+    v_{C_0}(0-) = \frac{q_1}{C_0} = \SI[parse-numbers=false]{\frac{4}{3}}{\V}
 \end{align}
 Using \eqref{eq:v2-t},
 \begin{align}
@@ -454,15 +455,179 @@ From KCL and KVL,
 \begin{align}
     &i_1 = i_2 +i_3 \\
     &i_1R_1 + \frac{4}{3} + \frac{1}{C_0}\int_{0}^{t}i_2dt = 0 \\
-    &\frac{4}{3} + \frac{1}{C_0}\int_{0}^{t}i_2dt - i_3R_2 - 2 = 0 \\
+    &\frac{4}{3} + \frac{1}{C_0}\int_{0}^{t}i_2dt - i_3R_2 - 2 = 0
 \end{align}
 Taking Laplace Transforms on both sides and using the properties of Laplace Transforms,
 \begin{align}
     &I_1 = I_2 +I_3 \label{eq:s1}\\
     &I_1R_1 + \frac{4}{3} + \frac{1}{sC_0}I_2 = 0 \\
-    &\frac{4}{3} + \frac{1}{sC_0}I_2 - I_3R_2 - 2 = 0 \label{eq:s3} \\
+    &\frac{4}{3} + \frac{1}{sC_0}I_2 - I_3R_2 - 2 = 0 \label{eq:s3}
 \end{align}
-where $i(t) \system{L} I(s)$. Note that the capacitor is equivalent to a resistive element of resistance $R_C = \frac{1}{sC_0}$ in the $s$-domain. Equations \eqref{eq:s1} - \eqref{eq:s3} precisely describe Fig. \ref{fig:sckt-q2}. 
+where $i(t) \system{L} I(s)$. Note that the capacitor is equivalent to 
+a resistive element of resistance $R_C = \frac{1}{sC_0}$ in the 
+$s$-domain. Equations \eqref{eq:s1} - \eqref{eq:s3} precisely describe 
+Fig. \ref{fig:sckt-q2}. 
 \end{enumerate}
 
+\section{Bilinear Transform}
+\begin{enumerate}[label=\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{section}
+\item In Fig. \ref{fig:ckt}, consider the case when $S$ is switched to 
+$Q$ right in the beginning. Formulate the differential equation.
+
+\solution The equivalent circuit in the $t$-domain is shown below.
+	
+\begin{figure}[!htb]
+    \begin{center}
+    \begin{circuitikz} 
+    \draw
+    (0,0) -- (0,3)
+    node[label={above:Q}] {}
+    to[R, l^=$R_1$, *-*, i = $i_1$] (3,3) 
+    node[label={above:X}] {}
+    to[R, l^=$R_2$, i = $i_3$] (5.5,3)
+    to[battery1, l= $V_2$] (5.5,0)
+    -- (0,0)
+    (3,3) to[C, l=$C_0$, i = $i_2$] (3,0) ;
+    \end{circuitikz}
+    \end{center}
+\caption{}
+\label{fig:tckt-q4}
+\end{figure}
+
+Applying KCL and KVL,
+\begin{align}
+    &i_1 = i_2 + i_3 \\
+    &i_1R_1 + \frac{1}{C_0}\int_0^ti_2\, dt = 0 \\
+    &i_3R_2 + 2 - \frac{1}{C_0}\int_0^ti_2\, dt = 0
+\end{align}
+Differentiating the above equations,
+\begin{align}
+    &\diff{i_1}{t} = \diff{i_2}{t} + \diff{i_3}{t} \label{eq:diff1}\\
+    &R_1\diff{i_1}{t} + \frac{i_2}{C_0} = 0 \label{eq:diff2}\\
+    &R_2\diff{i_3}{t} - \frac{i_2}{C_0} = 0 \label{eq:diff3}
+\end{align}
+Using \eqref{eq:diff1} and \eqref{eq:diff3} in \eqref{eq:diff2},
+\begin{align}
+    &R_1\brak{\diff{i_2}{t} + \diff{i_3}{t}} + \frac{i_2}{C_0} = 0 \\
+    &R_1\diff{i_2}{t} + \brak{1 + \frac{R_1}{R_2}}\frac{i_2}{C_0} = 0 \\
+    &\diff{i_2}{t} + \brak{\frac{1}{R_1} + \frac{1}{R_2}}\frac{i_2}{C_0} = 0 \\
+    &\diff{i_2}{t} + \frac{i_2}{\tau} = 0
+    \label{eq:diff-eqn-init}
+\end{align}
+where $\tau = \frac{C_0R_1R_2}{R_1 + R_2}$ is the RC time 
+constant of the circuit. Note that $i_2(0) = \frac{V_2}{R_2}$ A and 
+$i_2 = C_0\diff{V}{t}$, where $V$ is the voltage of the capacitor. 
+Hence, integrating \eqref{eq:diff-eqn-init},
+\begin{align}
+    C_0\diff{V}{t} - \frac{V_2}{R_2} + \frac{C_0V}{\tau} &= 0 \\
+    \implies \diff{V}{t} + \frac{V}{\tau} = \frac{V_2}{C_0R_2}
+    \label{eq:diff-eqn}
+\end{align}
+\item Find $H(s)$ considering the output voltage at the capacitor.
+
+\solution Transforming Fig. \ref{fig:tckt-q4} to the $s$-domain,
+
+\begin{figure}[!htb]
+    \begin{center}
+    \begin{circuitikz} 
+    \ctikzset{resistor = european}
+    \draw
+    (0,0) -- (0,3)
+    node[label={above:Q}] {}
+    to[R, l^=$R_1$, *-*] (3,3) 
+    node[label={above:X}] {}
+    to[R, l^=$R_2$] (5.5,3)
+    to[battery1, l= $V_2(s)$] (5.5,0)
+    -- (0,0)
+    (3,3) to[R, l=$\frac{1}{sC_0}$] (3,0) 
+    -- (3,-0.5) node[ground, label={right:G}] {};
+    \end{circuitikz}
+    \end{center}
+\caption{}
+\label{fig:sckt-q4}
+\end{figure}
+
+Applying nodal analysis at X, and noting that 
+$H(s) = \frac{V(s)}{V_2(s)}$,
+\begin{align}
+    &\frac{V}{R_1} + \frac{V}{\frac{1}{sC_0}} + \frac{V - V_2}{R_2} = 0 \\
+    &H(s)\brak{\frac{1}{R_1} + \frac{1}{R_2} + sC_0} = \frac{1}{R_2} \\
+    &H(s) = \frac{\frac{1}{R_2}}{\frac{1}{R_1} + \frac{1}{R_2} + sC_0}
+    \label{eq:Hs}
+\end{align}
+\item Plot $H(s)$. What kind of filter is it?
+
+\solution The Python code \texttt{codes/4\_3.py} plots $H(s)$.
+\begin{figure}[!ht]
+    \includegraphics[width=\columnwidth]{figs/4_3.png}
+    \caption{Plot of $H(s)$.}
+    \label{fig:Hs}
+\end{figure}
+Clearly, $H(s)$ is a low-pass filter.
+\item Using trapezoidal rule for integration, formulate the difference
+equation by considering 
+\begin{align}
+	y(n) = y(t)\vert_{t=n}
+\end{align}
+
+\solution Integrating \eqref{eq:diff-eqn} between limits $n$ to $n+1$ 
+and applying the trapezoidal formula,
+\begin{align}
+    v(n+1) - v(n) + \frac{v(n) + v(n+1)}{2\tau} = \nonumber\\
+    \frac{V_2\brak{u(n)+u(n+1)}}{C_0R_2} \\
+    v(n)\brak{2\tau+1} + v(n-1)\brak{2\tau-1} = \nonumber\\ 
+    \frac{V_2\tau\brak{u(n)+u(n-1)}}{C_0R_2}
+    \label{eq:difference-eqn}
+\end{align}
+for $n > 0$, where $v(0) = 0$.
+\item Find $H(z)$.
+
+\solution Note that for the input voltage, $v_i(n) = 2u(n)$ and
+so, $V_i(z) = \frac{2}{1-z^{-1}}$. Applying the Z-transform
+on both sides of \eqref{eq:difference-eqn},
+\begin{align}
+    V(z)\sbrak{(2\tau + 1) - z^{-1}(2\tau - 1)} \nonumber \\
+    = \frac{\tau\brak{1 + z^{-1}}V_i(z)}{C_0R_2}
+\end{align}
+Hence,
+\begin{align}
+    H(z) = \frac{\tau\brak{1+z^{-1}}}{C_0R_2\brak{\brak{2\tau+1}-\brak{2\tau-1}z^{-1}}}
+    \label{eq:Hz}
+\end{align}
+since $\abs{\frac{2\tau-1}{2\tau+1}} < 1$, the ROC is $\abs{z} > 1$.
+\item How can you obtain $H(z)$ from $H(s)$?
+
+\solution We use the bilinear transformation. Setting
+\begin{align}
+    s := \frac{2}{T}\frac{1 - z^{-1}}{1 + z^{-1}}
+\end{align}
+we get
+\begin{align}
+    H(z) &= \frac{\frac{1}{R_2}}{\frac{1}{R_1} + \frac{1}{R_2} + \frac{2C_0}{T}\frac{1 - z^{-1}}{1 + z^{-1}}} \\
+         &= \frac{T\tau\brak{1+z^{-1}}}{C_0R_2\brak{\brak{2\tau+T}-\brak{2\tau-T}z^{-1}}}
+\end{align}
+Setting $T = 1$ gives \eqref{eq:Hz}.
+
+\item Find $v(n)$. Verify using ngspice and the differential equation.
+
+\solution We have,
+\begin{align}
+    V(z) &= H(z)V_i(z) \\
+         &= \frac{TV_2\tau\brak{1+z^{-1}}}{C_0R_2\brak{1-z^{-1}}\brak{\brak{2\tau+T}-\brak{2\tau-T}z^{-1}}} \\
+         &= \frac{V_2\tau\brak{z+1}}{2C_0R_2}\sum_{k=-\infty}^{\infty}\brak{1-p^k}u(k)z^{-k}
+\end{align}
+where $p := \frac{2\tau-T}{2\tau+T}$. Thus,
+\begin{align}
+    v(n) = \frac{V_2\tau}{C_0R_2}\sbrak{u(n)\brak{1-p^n}+u(n+1)\brak{1-p^{n+1}}}
+\end{align}
+where $p := \frac{2\tau-1}{2\tau+1}$. We take $T = 10^{-7}$ as the
+sampling interval. The python code \texttt{codes/4\_7.py} verifies
+these equalities.
+\begin{figure}
+    \includegraphics[width=\columnwidth]{figs/4_7.png}
+    \caption{Representation of output across $C_0$.}
+    \label{fig:vc0}
+\end{figure}
+\end{enumerate}
 \end{document}
