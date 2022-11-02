@@ -20,5 +20,5 @@ plt.grid()
 plt.xlim(-2, 2)
 plt.xlabel('f (Hz)')
 plt.ylabel('H(f)')
-plt.savefig('../figs/3_10.png')
-os.system('sh gopen.sh ../figs/3_10.png')
+# s
+plt.show()
