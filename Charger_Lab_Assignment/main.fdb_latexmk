@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1667571523 "/home/yashrajput/EE3900/filters/Charger_Lab_Assignment/main.tex" "main.pdf" "main" 1667571524
+["pdflatex"] 1667571665 "/home/yashrajput/EE3900/filters/Charger_Lab_Assignment/main.tex" "main.pdf" "main" 1667571666
   "/etc/texmf/web2c/texmf.cnf" 1659783471 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/yashrajput/EE3900/filters/Charger_Lab_Assignment/main.tex" 1667571522 8992 bb7605d91f25be2ff9bc281aa36dc3da ""
+  "/home/yashrajput/EE3900/filters/Charger_Lab_Assignment/main.tex" 1667571665 8993 ab091841c64a0824e6992b86b6b9de75 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -247,10 +247,10 @@
   "figs/figure2.jpg" 1667569833 168083 028b764415f8d8b82962e948c87df75a ""
   "figs/figure3.jpg" 1667569871 140074 3aa32f57f2c28df59aef567ca41516c4 ""
   "figs/figure4.jpg" 1667569900 142101 0f53f2d98fc666ad27e1991da210d21f ""
-  "main.aux" 1667571524 3388 a9a6727aa82b351309795f155421db64 "pdflatex"
-  "main.out" 1667571524 753 9fe985dfd2e700a172778f302d20c035 "pdflatex"
-  "main.tex" 1667571522 8992 bb7605d91f25be2ff9bc281aa36dc3da ""
-  "main.toc" 1667571524 510 80a6acb9eba96769581cbc3efb76a717 "pdflatex"
+  "main.aux" 1667571666 3388 a9a6727aa82b351309795f155421db64 "pdflatex"
+  "main.out" 1667571666 753 9fe985dfd2e700a172778f302d20c035 "pdflatex"
+  "main.tex" 1667571665 8993 ab091841c64a0824e6992b86b6b9de75 ""
+  "main.toc" 1667571666 510 80a6acb9eba96769581cbc3efb76a717 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
